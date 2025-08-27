@@ -1,0 +1,11 @@
+{
+  "firstname": "Thamires",
+  "lastname": "Marina",
+  "totalprice": 200,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2025-09-05",
+    "checkout": "2025-09-15"
+  },
+  "additionalneeds": "Lunch"
+}
