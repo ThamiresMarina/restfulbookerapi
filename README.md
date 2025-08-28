@@ -77,4 +77,8 @@ Adicionar o fluxo completo CRUD
 
 Implementar Data Driven Tests
 
-Adicionar pipeline CI/CD (GitHub Actions)   
+Adicionar pipeline CI/CD (GitHub Actions) 
+
+## 📹 Evidência
+👉 [🎥 Clique aqui para ver a execução no Loom](https://www.loom.com/share/f0d9e25e1e6044adadd8cc9c7169e1f6?sid=c0f9aed9-2dc6-40bc-aee5-f0ec4f4b10d5)
+

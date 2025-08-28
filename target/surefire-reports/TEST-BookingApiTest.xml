@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="BookingApiTest" time="5.926" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="BookingApiTest" time="8.02" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\35196\AppData\Local\Temp\surefire2786607407786074817\surefirebooter-20250827200602894_3.jar C:\Users\35196\AppData\Local\Temp\surefire2786607407786074817 2025-08-27T20-06-02_415-jvmRun1 surefire-20250827200602894_1tmp surefire_0-20250827200602894_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\35196\AppData\Local\Temp\surefire10661714358164951832\surefirebooter-20250828140834433_3.jar C:\Users\35196\AppData\Local\Temp\surefire10661714358164951832 2025-08-28T14-08-33_429-jvmRun1 surefire-20250828140834433_1tmp surefire_0-20250828140834433_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="BookingApiTest#testGerarToken"/>
+    <property name="test" value="BookingApiTest#testDeletarBooking"/>
     <property name="surefire.test.class.path" value="C:\Iterasys\restfulbooker\target\test-classes;C:\Iterasys\restfulbooker\target\classes;C:\Users\35196\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\35196\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\35196\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\35196\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\35196\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\35196\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\35196\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\35196\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\35196\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\35196\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\35196\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\35196\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\35196\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\35196\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\35196\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\35196\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\35196\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\35196\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\35196\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\35196\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\35196\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\35196\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\35196\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\35196"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\35196\AppData\Local\Temp\surefire2786607407786074817\surefirebooter-20250827200602894_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\35196\AppData\Local\Temp\surefire10661714358164951832\surefirebooter-20250828140834433_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
@@ -58,8 +58,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testGerarToken" classname="BookingApiTest" time="5.879">
-    <system-out><![CDATA[ðŸ”‘ Token gerado: 1254989f56b0fb3
+  <testcase name="testDeletarBooking" classname="BookingApiTest" time="7.923">
+    <system-out><![CDATA[ Booking deletado com sucesso!
+ Resposta da deleÃ§Ã£o:
+Created
+ ID deletado: 3653
 ]]></system-out>
   </testcase>
 </testsuite>

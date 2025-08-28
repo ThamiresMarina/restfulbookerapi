@@ -23,7 +23,7 @@ public class BookingApiTest {
 
         String authPayload = lerJson("src/test/resources/Auth.json");
 
-        String token = given()
+        var response = given()
             .contentType(ContentType.JSON)
             .body(authPayload)
         .when()
@@ -31,9 +31,12 @@ public class BookingApiTest {
         .then()
             .statusCode(200)
             .body("token", notNullValue())
-            .extract().path("token");
+            .extract().response();
 
-        System.out.println("🔑 Token gerado: " + token);
+        String token = response.jsonPath().getString("token");
+
+        System.out.println(" Token gerado: " + token);
+        System.out.println(" Resposta completa:\n" + response.asPrettyString());
     }
 
     @Test
@@ -42,7 +45,7 @@ public class BookingApiTest {
 
         String createBookingPayload = lerJson("src/test/resources/CriarBooking.json");
 
-        int bookingId = given()
+        var response = given()
             .contentType(ContentType.JSON)
             .body(createBookingPayload)
         .when()
@@ -50,9 +53,13 @@ public class BookingApiTest {
         .then()
             .statusCode(200)
             .body("booking.firstname", equalTo("Thamires"))
-            .extract().path("bookingid");
+            .extract().response();
 
-        System.out.println(" Booking criado com ID: " + bookingId);
+        int bookingId = response.jsonPath().getInt("bookingid");
+
+        System.out.println(" Booking criado com sucesso!");
+        System.out.println(" Detalhes da reserva:\n" + response.asPrettyString());
+        System.out.println(" ID da reserva: " + bookingId);
     }
 
     @Test
@@ -85,7 +92,7 @@ public class BookingApiTest {
             .extract().path("bookingid");
 
         // 3 - Atualizar o booking
-        given()
+        var response = given()
             .contentType(ContentType.JSON)
             .cookie("token", token)
             .body(updateBookingPayload)
@@ -94,9 +101,54 @@ public class BookingApiTest {
         .then()
             .statusCode(200)
             .body("lastname", equalTo("Marina"))
-            .body("totalprice", equalTo(200));
+            .body("totalprice", equalTo(200))
+            .extract().response();
 
-        System.out.println("✏️ Booking atualizado com ID: " + bookingId);
+        System.out.println(" Booking atualizado com sucesso!");
+        System.out.println(" Detalhes da reserva atualizada:\n" + response.asPrettyString());
+    }
+
+    @Test
+    public void testDeletarBooking() throws IOException {
+        RestAssured.baseURI = "https://restful-booker.herokuapp.com";
+
+        String authPayload = lerJson("src/test/resources/Auth.json");
+
+        // 1 - Gerar token
+        String token = given()
+            .contentType(ContentType.JSON)
+            .body(authPayload)
+        .when()
+            .post("/auth")
+        .then()
+            .statusCode(200)
+            .extract().path("token");
+
+        // 2 - Criar booking temporário para deletar
+        String createBookingPayload = lerJson("src/test/resources/CriarBooking.json");
+
+        int bookingId = given()
+            .contentType(ContentType.JSON)
+            .body(createBookingPayload)
+        .when()
+            .post("/booking")
+        .then()
+            .statusCode(200)
+            .extract().path("bookingid");
+
+        // 3 - Deletar o booking
+        var response = given()
+            .cookie("token", token)
+        .when()
+            .delete("/booking/" + bookingId)
+        .then()
+            .statusCode(201) // sucesso no Restful Booker
+            .extract().response();
+
+        System.out.println(" Booking deletado com sucesso!");
+        System.out.println(" Resposta da deleção:\n" + response.asPrettyString());
+        System.out.println(" ID deletado: " + bookingId);
     }
 }
+
 
